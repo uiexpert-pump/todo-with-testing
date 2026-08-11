@@ -61,7 +61,7 @@ describe("Todo Application", () => {
 
     expect(
       screen.getByRole("button", {
-        name: /mark incomplete/i,
+        name: /mark .* incomplete/i,
       }),
     ).toBeInTheDocument();
   });
@@ -88,7 +88,7 @@ describe("Todo Application", () => {
 
     await user.click(
       screen.getByRole("button", {
-        name: /delete/i,
+        name: /^delete$/i,  // (^) start  {delete}  exact text ($) end
       }),
     );
 
